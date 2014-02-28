@@ -1,5 +1,6 @@
 from app.config import render_template
 
+
 class index:
     def GET(self):
         """
