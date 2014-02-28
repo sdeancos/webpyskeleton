@@ -6,4 +6,4 @@ class index:
         """
             Example Controller WebpySkeleton
         """
-        return render_template('bundles/ExampleBundle/views/index.html')
+        return render_template('bundles/ExampleBundle/views/index.jinja2')

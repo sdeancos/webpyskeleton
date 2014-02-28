@@ -28,12 +28,12 @@ def put_session(session):
 
 
 def render_not_found():
-    render_view = render_template('app/templates/404.html')
+    render_view = render_template('app/templates/404.jinja2')
     return notfound(render_view)
 
 
 def render_internal_error():
-    render_view = render_template('app/templates/500.html')
+    render_view = render_template('app/templates/500.jinja2')
     return internalerror(render_view)
 
 
