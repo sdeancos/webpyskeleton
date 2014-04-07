@@ -1,8 +1,9 @@
 from web import application, httpserver, debugerror, config, session
-from app import config as appconfig, urls
+from app import config as appconfig
+from app.config import generate_dict_urls
 
-PORT   = 8000
-DEBUG  = True
+PORT = 8000
+DEBUG = True
 COOKIE = 'webpyskeleton_cookie_session_id'
 
 
@@ -12,7 +13,8 @@ class MyApplication(application):
         return httpserver.runsimple(func, ('0.0.0.0', port))
 
 if __name__ == "__main__":
-    app = MyApplication(urls.urlpatterns, globals(), True)
+    urlpatterns = generate_dict_urls()
+    app = MyApplication(urlpatterns, globals(), True)
     config.session_parameters['cookie_name'] = COOKIE
     session = session.Session(app,
                               session.DiskStore('sessions'),

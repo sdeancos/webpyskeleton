@@ -1,0 +1,5 @@
+{
+    "ExampleBundle": {
+        "/example": {"controller": "index", "action": "index"}
+    }
+}
