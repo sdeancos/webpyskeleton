@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+
 from app import config
 
 setup(
@@ -29,4 +34,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Application Frameworks',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
+    install_requires=['web.py','Jinja2', '_mysql'],
+    requires=['web.py','Jinja2', '_mysql'],
 )
