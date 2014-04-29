@@ -14,6 +14,7 @@ setup(
     author_email='sdeancos@gmail.com',
     maintainer='Samuel de Ancos',
     maintainer_email='sdeancos@gmail.com',
+    scripts=['app/bin/wps_create_project.py']
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Topic :: Software Development',

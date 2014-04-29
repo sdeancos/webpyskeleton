@@ -4,6 +4,7 @@ from os.path import dirname, abspath
 from sys import argv
 from json import loads
 
+__version__ = '0.1'
 
 PATH = abspath(dirname(argv[0]))
 
