@@ -9,4 +9,13 @@ Features:
 - Subapps system.
 - Jinja2 Support.
 
+Main
+----
+
+You can config you database in app/config.py and routes in urls.json
+
+Try: python main.py
+
+Test: http://localhost:8000/example
+
 
