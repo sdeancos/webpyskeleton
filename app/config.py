@@ -38,6 +38,21 @@ def render_internal_error():
     render_view = render_template('app/templates/500.jinja2')
     return internalerror(render_view)
 
+class Flash():
+    @staticmethod
+    def get_messages():
+        session = get_session()
+        messages = session.get('flash', {})
+        session['flash'] = defaultdict(list)
+        return messages
+
+    @staticmethod
+    def set_message(category, message):
+        session = get_session()
+        if not 'flash' in session:
+            session['flash'] = defaultdict(list)
+        session['flash'][category].append(message)
+
 
 def render_template(template_name, **context):
     extensions = context.pop('extensions', [])
@@ -46,6 +61,8 @@ def render_template(template_name, **context):
     template_loader = FileSystemLoader(searchpath=PATH)
     jinja_env = Environment(loader=template_loader, extensions=extensions)
     jinja_env.globals.update(_globals)
+    
+    jinja_env.globals.update(flash=Flash.get_messages)
 
     return jinja_env.get_template(template_name).render(context)
 
