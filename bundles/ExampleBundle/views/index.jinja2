@@ -8,5 +8,10 @@
 {% endblock %}
 
 {% block content %}
+
+    {% set flash = flash() %}
+    {% if flash.notice %}
+       {{ flash.notice[0] }}
+    {% endif %}
     <h2>Example View WebPySkeleton</h2>
 {% endblock %}
