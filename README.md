@@ -8,6 +8,7 @@ Features:
 - Routing from json file.
 - Subapps system.
 - Jinja2 Support.
+- Flash message.
 
 Main
 ----
