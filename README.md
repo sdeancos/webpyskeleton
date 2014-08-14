@@ -10,6 +10,11 @@ Features:
 - Jinja2 Support.
 - Flash message.
 
+Dependencies
+------------
+- Web.py: pip install web.py
+- Jinja2: pip install jinja2
+
 Main
 ----
 
